@@ -10,4 +10,3 @@ module DataMapper
   end
 end
 class Dictionary; alias count length; end
-

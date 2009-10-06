@@ -15,6 +15,7 @@ Rails::Initializer.run do |config|
     require 'dm-ar-finders'
     require 'dm-rails-patch'
     require 'appengine-apis/users'
+    require 'dm-serializer'
     
     DataMapper.setup(:default, "appengine://auto")
     # Set Logger from appengine-apis, all environments
