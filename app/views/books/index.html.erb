@@ -1,0 +1,37 @@
+<h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Summary</th>
+    <th>Image url</th>
+    <th>Available</th>
+    <th>Pages</th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%=h book.title %></td>
+    <td><%=h book.summary %></td>
+    <td><%=h book.image_url %></td>
+    <td><%=h book.available %></td>
+    <td><%=h book.pages %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+    <%= link_to 'New book', new_book_path %>
+</p>
+
+<p>
+    <% if @user -%>
+        Hello <%= @user.nickname %> - 
+        <%= link_to("Log out", AppEngine::Users.create_logout_url(request.request_uri)) %>
+    <% else -%>
+        <%= link_to("Login", AppEngine::Users.create_login_url(request.request_uri)) %>
+    <% end -%>
+</p>
