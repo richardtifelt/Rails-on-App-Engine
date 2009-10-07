@@ -1,0 +1,9 @@
+<h1>Login to view your Tweets</h1>
+<% form_tag do |f| -%>
+    <p>
+        <%= label_tag(:login, "Twitter username:") %>
+    </p>
+    <p>
+        <%= text_field_tag(:username) %>
+    </p>
+<% end -%>

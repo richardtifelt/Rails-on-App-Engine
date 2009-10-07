@@ -1,6 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
-  map.info "rails/info/:action", :controller => "rails/info"
   map.resources :books
+  
+  map.info "rails/info/:action", :controller => "rails/info"
+  
+  map.with_options(:controller => 'tweets') do |t|
+    t.tweet_list 'tweets', :action => 'index'
+    t.twitter_login 'login', :action => 'login'
+  end
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
 

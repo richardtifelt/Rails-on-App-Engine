@@ -1,6 +1,6 @@
 require 'dm-serializer/common'
 
-require 'json'
+#require 'json'
 
 module DataMapper
   module Serialize

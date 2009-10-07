@@ -30,8 +30,13 @@
 <p>
     <% if @user -%>
         Hello <%= @user.nickname %> - 
-        <%= link_to("Log out", AppEngine::Users.create_logout_url(request.request_uri)) %>
+        <%= link_to("Log out from Google", AppEngine::Users.create_logout_url(request.request_uri)) %>
     <% else -%>
-        <%= link_to("Login", AppEngine::Users.create_login_url(request.request_uri)) %>
+        <%= link_to("Login to Google", AppEngine::Users.create_login_url(request.request_uri)) %>
     <% end -%>
+</p>
+
+<h2>View your Tweets</h2>
+<p>
+    <%= link_to("Login to Twitter", twitter_login_path) %>
 </p>
