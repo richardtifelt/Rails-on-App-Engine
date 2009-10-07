@@ -6,7 +6,7 @@ Implemented and configured are some of the GAE specific API's. At the moment the
 
 == In action
     
-The latest version of this app is running on GAE here: http://richard-rails-test.appspot.com/
+The latest version of this app is running on GAE here: http://richard-rails-test.appspot.com
 
 The JRuby boot time is very slow on GAE at the moment. I often need to wait a good 30 seconds for the JVM to boot. It is also prone to raise 500 errors, but keep on reloading the page and it should finally work. I sometimes need to reload the page a good ~20 times. A cron job that loads the environment every few minutes should apparently help, something I need to look into.
 
@@ -17,11 +17,15 @@ The JRuby boot time is very slow on GAE at the moment. I often need to wait a go
 3. Download the app: git clone git://github.com/richardjohansson/Rails-on-App-Engine.git "your-app-name"
 4. Update config.ru with "your-app-name"
 
-## The Console
+=== The Console
 
 * appcfg.rb run -S irb -r config/environment
 
-## Deploy
+=== Development Server
+
+* dev_appserver.rb .
+
+=== Deploy
 
 * appcfg.rb update .
 
