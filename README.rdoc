@@ -1,0 +1,27 @@
+= Google App Engine Rails Template
+
+This is a working (hopefully) Rails 2.3.3 app template built and configured to run on Google App Engine.
+
+Implemented and configured are some of the GAE specific API's. At the moment the Users and URLFetch API's. I intend to try out and deploy all of the exciting API's provided by Google. 
+
+== In action
+    
+The latest version of this app is running on GAE here: http://richard-rails-test.appspot.com/
+
+The JRuby boot time is very slow on GAE at the moment. I often need to wait a good 30 seconds for the JVM to boot. It is also prone to raise 500 errors, but keep on reloading the page and it should finally work. I sometimes need to reload the page a good ~20 times. A cron job that loads the environment every few minutes should apparently help, something I need to look into.
+
+== Install
+
+1. Register your app on Google App Engine: http://appengine.google.com/start/createapp
+2. sudo gem install google-appengine
+3. Download the app: git clone git://github.com/richardjohansson/Rails-on-App-Engine.git "your-app-name"
+4. Update config.ru with "your-app-name"
+
+## The Console
+
+* appcfg.rb run -S irb -r config/environment
+
+## Deploy
+
+* appcfg.rb update .
+
